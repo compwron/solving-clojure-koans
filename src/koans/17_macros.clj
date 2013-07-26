@@ -11,13 +11,13 @@
 
 (defmacro r-infix [form]
   (cond (not (seq? form))
-        __
+        form
         (= 1 (count form))
         `(r-infix ~(first form))
         :else
         (let [operator (second form)
               first-arg (first form)
-              others __]
+              others ((comp rest rest) form)] ; rest means last? why is it named form?
           `(~operator
             (r-infix ~first-arg)
             (r-infix ~others)))))
