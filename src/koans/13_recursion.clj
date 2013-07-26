@@ -1,31 +1,20 @@
 (defn is-even? [n]
   (if (= n 0)
-    true
-    (not (is-even? (dec n)))))
+    __
+    (___ (is-even? (dec n)))))
 
 (defn is-even-bigint? [n]
   (loop [n   n
          acc true]
     (if (= n 0)
-      acc
+      __
       (recur (dec n) (not acc)))))
 
-; (defn recursive-reverse [coll]
-;   identity coll) ; my solution
+(defn recursive-reverse [coll]
+  __)
 
-(defn recursive-reverse [coll] ; https://github.com/viebel/clojure-koans/blob/master/src/koans/recursion.clj
-      (loop [coll coll
-                  reversed '()]
-            (if (empty? coll)
-              reversed 
-              (recur (rest coll) (cons (first coll) reversed))))) 
-
-(defn factorial [n] ; https://github.com/viebel/clojure-koans/blob/master/src/koans/recursion.clj
-      (loop [n n 
-               res 1]
-            (if (= 0 n)
-              res
-              (recur (dec n) (* n res)))))
+(defn factorial [n]
+  __)
 
 (meditations
   "Recursion ends with a base case"
